@@ -1,0 +1,111 @@
+/**********************/
+    /*Setting Up*/
+/**********************/
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+body{
+  font-size:15px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+}
+ul{list-style:none;}
+
+a{text-decoration:none;}
+
+img{width:100%;}
+
+/**********************/
+    /*Ultilies*/
+/**********************/
+@mixin row{
+  max-width:1123px;
+  margin:0 auto;
+}
+
+@mixin flex-columns{
+  display: flex;
+  justify-content:space-between;
+}
+
+@mixin grid-columns{
+   display:grid;
+   grid-template-columns:repeat(2, 1fr);
+}
+/**********************/
+      /*Hero*/
+/**********************/
+#hero{
+  background:linear-gradient(rgba(0, 0, 0, 0.507),rgba(0, 0, 0, 0.507)),url(/images/desktop/image-hero.jpg);
+  height: 90vh;
+  background-size:cover;
+  background-position:center;
+  .content{
+    padding-top:5rem;
+    @include row;
+    h1{
+      color: #fff;
+      text-transform: uppercase;
+      font-size:5rem;
+      padding: 1rem 2rem;
+      font-weight:300;
+      border: 1px solid #fff;
+      width: 60%;
+    }
+  }
+}
+/**********************/
+    /*Navegation*/
+/**********************/
+#navbar{
+  @include row;
+  @include flex-columns;
+  padding-top:3rem;
+  ul{
+    display:flex;
+    li{
+      padding:0 1.5rem;
+      a{
+        color:#fff;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+/**********************/
+    /*Media Queries*/
+/**********************/
+@media(max-width:765px){
+//navegation
+#navbar{
+  @include row;
+  @include flex-columns;
+  padding:1rem;
+  ul{
+    display:none;
+    li{
+      padding:1rem;
+    }
+  }
+ }
+ //hero
+ #hero{
+  height:100vh;
+  .content{
+    padding:5rem 10px;
+    h1{
+      font-size:1.8rem;
+      width:100%;
+    }
+  }
+ }
+}
+
+#experiences{
+  @include row;
+  @include grid-columns;
+
+}
+
