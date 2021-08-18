@@ -1,3 +1,4 @@
+/*colors*/
 /**********************/
 /*Setting Up*/
 /**********************/
@@ -11,6 +12,7 @@ body {
   font-size: 15px;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
+  background-color: black;
 }
 
 ul {
@@ -19,10 +21,6 @@ ul {
 
 a {
   text-decoration: none;
-}
-
-img {
-  width: 100%;
 }
 
 /**********************/
@@ -73,6 +71,26 @@ img {
   font-size: 1.1rem;
 }
 
+#experiences {
+  grid-template-columns: 4fr 1fr;
+  display: grid;
+  padding: 5rem;
+}
+#experiences .txt {
+  margin-top: 15rem;
+}
+#experiences .img {
+  display: flex;
+}
+#experiences .img img {
+  width: 660px;
+}
+#experiences .img .box {
+  width: 150px;
+  height: 150px;
+  background: #f8069b;
+}
+
 /**********************/
 /*Media Queries*/
 /**********************/
@@ -101,12 +119,18 @@ img {
     font-size: 1.8rem;
     width: 100%;
   }
-}
-#experiences {
-  max-width: 1123px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
+  #experiences {
+    grid-template-columns: 1fr;
+    display: grid;
+    padding: 1rem;
+  }
+  #experiences .txt {
+    margin-top: 2rem;
+  }
+  #experiences .txt h2 {
+    font-size: 2rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
