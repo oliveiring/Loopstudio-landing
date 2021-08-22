@@ -17,9 +17,8 @@ ul{list-style:none;}
 
 a{text-decoration:none;}
 
-img{
-width: 100%;
-}
+img{width: 100%;}
+
 h2{
   font-size: 2.5rem;
   font-weight:300;
@@ -36,6 +35,32 @@ h2{
 @mixin flex-columns{
   display: flex;
   justify-content:space-between;
+}
+@mixin share-img{
+  opacity:10;
+  cursor: pointer;
+  background:#fff;
+  transition: all 1s;
+}
+
+@mixin shere-img-hover {
+  opacity:0.4;
+  color:c.color(--black-color);
+}
+
+@mixin btn{
+  border: 1px solid c.color(--black-color);
+  text-align: center;
+  padding: 1rem 2.5rem;
+  color:c.color(--black-color);
+  font-weight:bolder;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: all 1s;
+  &:hover{
+    background:c.color(--black-color);
+    color: c.color(--white-color);
+  }
 }
 
 /**********************/
@@ -61,7 +86,6 @@ h2{
   }
 }
 
- 
 /**********************/
     /*Navegation*/
 /**********************/
@@ -115,19 +139,9 @@ h2{
   padding-top: 10rem;
   .creation-intro{
     @include flex-columns;
-    .btn{
-      border: 1px solid c.color(--black-color);
-      text-align: center;
-      padding: 1rem 2.5rem;
-      color:c.color(--black-color);
-      font-weight:bolder;
-      border-radius: 4px;
-      text-transform: uppercase;
-      &:hover{
-        background:c.color(--black-color);
-        color: c.color(--white-color);
-        
-      }
+    .btn-up{
+      @include btn;
+      display: block;
     }
   }
   .creation-photo{
@@ -153,34 +167,33 @@ h2{
         text-transform: uppercase;
         transition: all 1s;
       }
-      .img-1{
-        opacity:10;
-        cursor: pointer;
-        background:#fff;
-        transition: all 1s;
-        
-        display: block;
-        &:hover{
-          opacity:0.4;
-          color:c.color(--black-color)
+      .img{
+        &-1{
+          @include share-img;
+          display: block;
+          &:hover{
+            @include shere-img-hover;
+          }
         }
-      }
-      .img-2{
-        display: none;
-        opacity:10;
-        cursor: pointer;
-        background:#fff;
-        transition: all 1s;
-        &:hover{
-          opacity:0.4;
-          color:c.color(--black-color)
+        &-2{
+          display:none;
+          @include share-img;
+          &:hover{
+            @include shere-img-hover;
+          }
         }
       }
     }
   }
-
+    
+  .btn-down{
+    @include btn;
+    display:none;
+  }
 }
-
+#footer{
+  padding:5rem;
+}
 /**********************/
     /*Media Queries*/
 /**********************/
@@ -211,8 +224,8 @@ h2{
  //experince
  #experince{
   grid-template-columns:1fr;
-  padding:2rem 1rem;
-  display: none;
+  padding:2rem 2rem;
+  //display: none;
   .grid-item:nth-child(1){
     grid-column:1/7;
     grid-row:1/7;
@@ -226,26 +239,19 @@ h2{
   }
 }
 
-h2{font-size:1.5rem;}
-
-
+h2{
+  font-size:1.5rem;
+  margin:auto;
+}
 
 
 #creations{
   @include row;
-  padding-top: 10rem;
+  padding-top:5rem;
   .creation-intro{
     @include flex-columns;
-    .btn{
-      border: 1px solid c.color(--black-color);
-      text-align: center;
-      padding: 1rem 2.5rem;
-      color:c.color(--black-color);
-      font-weight:bolder;
-      border-radius: 4px;
-      text-transform: uppercase;
+    .btn-up{
       display: none;
-      transition: all 1s;
       &:hover{
         background:c.color(--black-color);
         color: c.color(--white-color);
@@ -254,47 +260,31 @@ h2{font-size:1.5rem;}
     }
   }
   .creation-photo{
-    padding-top: 5rem;
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns:repeat(auto-fit , minmax(200px, 1fr));
+    padding-top:2rem;
     
-   
+
     .grid-item{
-      position: relative;
-      color: #fff;
-      &:hover{
-        color: c.color(--black-color);
-      }
       h3{
-        position:absolute;
-        bottom:5%;
-        transform: translate(-50%,-50%);
-        left:40%;
         font-size:1.5rem;
-        font-weight:300;
-        text-transform: uppercase;
       }
-      .img-1{
-        opacity:10;
-        cursor: pointer;
-        background:#fff;
-        transition: all 1s;
-        display: none;
-        &:hover{
-          opacity:0.4;
-          color:c.color(--black-color);
+      .img{
+        &-1{
+          display:none;
+        }
+        &-2{
+          display: block;
         }
       }
-      .img-2{
-        display:block;
-      }
+
     }
   }
-
+  .btn-down{
+    display: block;
+    @include row;
+    
+  }
 }
 
+
 }
-
-
 
