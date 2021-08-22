@@ -192,7 +192,31 @@ h2{
   }
 }
 #footer{
-  padding:5rem;
+  padding: 2.7rem 0;
+  background:c.color(--black-color);
+  color: c.color(--white-color);
+  margin-top: 6rem;
+  .main-footer{
+    @include row;
+    display:flex;
+    justify-content:space-between;
+    .flex-footer{
+     p{
+       color:c.color(--dark-gray);
+     }
+      ul{
+        display: flex;
+        padding: 1rem 0;
+        a{
+          color: #fff; 
+          padding-right: 2rem;
+          i{
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
 }
 /**********************/
     /*Media Queries*/
@@ -284,7 +308,26 @@ h2{
     
   }
 }
-
-
+.main-footer{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  .flex-footer{
+   
+    ul{
+      flex-direction: column;
+      li{
+        padding-top:1rem;
+      }
+      a{
+        color: #fff;
+      }
+      }
+    }
+  }
 }
+
+
+
 
