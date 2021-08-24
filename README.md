@@ -8,7 +8,7 @@
   
  <ul>
   <li>HTML5</li>
-  <li>CSS</li>
+  <li>SCSS</li>
   <li>JAVASCRIPT</li>
 </ul>
 
