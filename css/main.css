@@ -1,4 +1,74 @@
 /*colors*/
+#nav-icon {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  color: white;
+  display: none;
+}
+
+#nav-icon span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s;
+}
+
+/* Icon 3 */
+#nav-icon span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon span:nth-child(2), #nav-icon span:nth-child(3) {
+  top: 9px;
+}
+
+#nav-icon span:nth-child(4) {
+  top: 18px;
+}
+
+#nav-icon.open span:nth-child(1) {
+  top: 9px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav-icon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#nav-icon.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+@media (max-width: 767px) {
+  #nav-icon {
+    display: block;
+    margin: 8px;
+    left: right;
+  }
+}
 /**********************/
 /*Setting Up*/
 /**********************/
@@ -71,6 +141,7 @@ h2 {
 }
 #navbar ul {
   display: flex;
+  flex-direction: row;
 }
 #navbar ul li {
   padding: 0 1.5rem;
@@ -104,7 +175,7 @@ h2 {
   background: #fff;
   grid-row: 2/7;
   grid-column: 5/9;
-  padding: 4rem 3rem;
+  padding: 4rem 1rem;
 }
 #experince .grid-item:nth-child(2) p {
   margin-top: 2.7rem;
@@ -125,7 +196,7 @@ h2 {
 #creations .creation-intro .btn-up {
   border: 1px solid black;
   text-align: center;
-  padding: 1rem 2.5rem;
+  padding: 1rem 3.5rem;
   color: black;
   font-weight: bolder;
   border-radius: 4px;
@@ -138,7 +209,7 @@ h2 {
   color: white;
 }
 #creations .creation-photo {
-  padding-top: 5rem;
+  padding: 5rem 1rem;
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -185,7 +256,7 @@ h2 {
 #creations .btn-down {
   border: 1px solid black;
   text-align: center;
-  padding: 1rem 2.5rem;
+  padding: 1rem 3.5rem;
   color: black;
   font-weight: bolder;
   border-radius: 4px;
@@ -238,6 +309,8 @@ h2 {
   }
   #navbar ul {
     display: none;
+    position: absolute;
+    right: 15%;
   }
   #navbar ul li {
     padding: 1rem;
@@ -256,7 +329,7 @@ h2 {
 
   #experince {
     grid-template-columns: 1fr;
-    padding: 2rem 2rem;
+    padding: 2rem 1rem;
   }
   #experince .grid-item:nth-child(1) {
     grid-column: 1/7;
@@ -269,7 +342,6 @@ h2 {
     grid-row: 1/7;
     grid-column: 1/9;
     margin-top: 80%;
-    padding: 10px;
   }
 
   h2 {
@@ -285,6 +357,7 @@ h2 {
   #creations .creation-intro {
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
   }
   #creations .creation-intro .btn-up {
     display: none;
@@ -311,19 +384,22 @@ h2 {
     margin: 0 auto;
   }
 
-  .main-footer {
+  #footer {
+    padding: 2rem;
+  }
+  #footer .main-footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
   }
-  .main-footer .flex-footer ul {
+  #footer .main-footer .flex-footer ul {
     flex-direction: column;
   }
-  .main-footer .flex-footer ul li {
+  #footer .main-footer .flex-footer ul li {
     padding-top: 1rem;
   }
-  .main-footer .flex-footer ul a {
+  #footer .main-footer .flex-footer ul a {
     color: #fff;
   }
 }

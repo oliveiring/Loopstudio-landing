@@ -18,13 +18,19 @@
         <a href="#"><img src="/images/logo.svg" alt="logo"></a>
       </div>
       <div class="column">
-         <ul>
+         <ul id="main-nav">
             <li><a href="#">About</a></li>
             <li><a href="#">Careers</a></li>
             <li><a href="#">Events</a></li>
             <li><a href="#">Products</a></li>
             <li><a href="#">Support</a></li>
          </ul>
+         <div id="nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+         </div>
       </div>
   </nav>
   <div class="content">
@@ -54,44 +60,44 @@
             </div>
             <div class="creation-photo">
                 <div class="grid-item">
-                  <img class="img-1"  src="/images/desktop/image-deep-earth.jpg" alt="">
-                  <img class="img-2" src="/images/mobile/image-deep-earth.jpg" alt="">
+                  <img class="img-1"  src="/images/desktop/image-deep-earth.jpg" alt="deep-earth">
+                  <img class="img-2" src="/images/mobile/image-deep-earth.jpg" alt="deep-earth">
                   <h3>Deep earth</h3>
                 </div>
                 <div class="grid-item">
-                  <img class="img-1"  src="/images/desktop/image-night-arcade.jpg" alt="">
-                  <img class="img-2" src="/images/mobile/image-night-arcade.jpg" alt="">
+                  <img class="img-1"  src="/images/desktop/image-night-arcade.jpg" alt="night-arcade">
+                  <img class="img-2" src="/images/mobile/image-night-arcade.jpg" alt="night-arcade">
                   <h3>Night arcade</h3>
                 </div>
                 <div class="grid-item">
-                  <img class="img-1"  src="/images/desktop/image-soccer-team.jpg" alt="">
-                  <img class="img-2" src="/images/mobile/image-soccer-team.jpg" alt="">
+                  <img class="img-1"  src="/images/desktop/image-soccer-team.jpg" alt="soccer">
+                  <img class="img-2" src="/images/mobile/image-soccer-team.jpg" alt="soccer">
                   <h3>Soccer team VR</h3>
                 </div>
                 <div class="grid-item">
-                  <img class="img-1"  src="/images/desktop/image-grid.jpg" alt="">
-                  <img class="img-2" src="/images/mobile/image-grid.jpg" alt="">
-                  <h3>Soccer team VR</h3>
+                  <img class="img-1"  src="/images/desktop/image-grid.jpg" alt="The grid">
+                  <img class="img-2" src="/images/mobile/image-grid.jpg" alt="The grid">
+                  <h3>The Grid</h3>
                 </div>
                 <!---------part--2------------->
                 <div class="grid-item">
-                  <img class="img-1"  src="/images/desktop/image-from-above.jpg" alt="">
-                  <img class="img-2" src="/images/mobile/image-from-above.jpg" alt="">
+                  <img class="img-1"  src="/images/desktop/image-from-above.jpg" alt="from-above">
+                  <img class="img-2" src="/images/mobile/image-from-above.jpg" alt="from-above">
                   <h3>From up above VR</h3>
                 </div>
                 <div class="grid-item">
-                  <img class="img-1"  src="/images/desktop/image-pocket-borealis.jpg" alt="">
+                  <img class="img-1"  src="/images/desktop/image-pocket-borealis.jpg" alt="from-above">
                   <img class="img-2" src="/images/mobile/image-pocket-borealis.jpg" alt="">
                   <h3>Pocket borealis</h3>
                 </div>
                 <div class="grid-item">
-                  <img class="img-1"  src="/images/desktop/image-curiosity.jpg" alt="">
-                  <img class="img-2" src="/images/mobile/image-curiosity.jpg" alt="">
+                  <img class="img-1"  src="/images/desktop/image-curiosity.jpg" alt="curiosity">
+                  <img class="img-2" src="/images/mobile/image-curiosity.jpg" alt="curiosity">
                   <h3>The curiosity</h3>
                 </div>
                 <div class="grid-item">
-                  <img class="img-1"  src="/images/desktop/image-fisheye.jpg" alt="">
-                  <img class="img-2" src="/images/mobile/image-fisheye.jpg" alt="">
+                  <img class="img-1"  src="/images/desktop/image-fisheye.jpg" alt="fisheye">
+                  <img class="img-2" src="/images/mobile/image-fisheye.jpg" alt="fisheye">
                   <h3>Make it fisheye</h3>
                 </div>
                   <a class="btn-down" href="#">see all</a>
@@ -122,27 +128,18 @@
     </div>
     </div>
   </footer>
-  <!------
-
-
-  
-
-  See all
-
-  About
-  Careers
-  Events
-  Products
-  Support
-
-  © 2021 Loopstudios. All rights reserved.
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-  --->
-  <script src="js/script.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>
+      $('#nav-icon').click(function(){
+        var nav = $('#main-nav')
+        nav.slideToggle(200)
+      })
+
+      $(document).ready(function(){
+	      $('#nav-icon').click(function(){
+		      $(this).toggleClass('open');
+	       });
+      });
+  </script>
 </body>
 </html>
